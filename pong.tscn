@@ -1,20 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7fd5wscpnoaq"]
+[gd_scene load_steps=7 format=3 uid="uid://b7fd5wscpnoaq"]
 
-[ext_resource type="Script" path="res://paddle.gd" id="1_480tc"]
+[ext_resource type="Script" path="res://pong.gd" id="1_iskim"]
 [ext_resource type="Script" path="res://ball.gd" id="2_2aocv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ejht"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjvdu"]
-size = Vector2(20, 19.2771)
-
-[sub_resource type="Gradient" id="Gradient_wav4k"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iymc7"]
-gradient = SubResource("Gradient_wav4k")
-width = 32
-height = 128
 
 [sub_resource type="Gradient" id="Gradient_m6muo"]
 interpolation_mode = 1
@@ -31,6 +20,7 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xk1ll"]
 
 [node name="Pong" type="Node2D"]
+script = ExtResource("1_iskim")
 
 [node name="LevelBorders" type="StaticBody2D" parent="."]
 position = Vector2(414, 423)
@@ -43,28 +33,6 @@ shape = SubResource("WorldBoundaryShape2D_0ejht")
 position = Vector2(187, -422)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_0ejht")
-
-[node name="paddle" type="CharacterBody2D" parent="."]
-position = Vector2(42, 333)
-script = ExtResource("1_480tc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle"]
-scale = Vector2(1.58766, 6.64)
-shape = SubResource("RectangleShape2D_bjvdu")
-
-[node name="Sprite2D" type="Sprite2D" parent="paddle"]
-texture = SubResource("GradientTexture2D_iymc7")
-
-[node name="paddle2" type="CharacterBody2D" parent="."]
-position = Vector2(1105, 333)
-script = ExtResource("1_480tc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle2"]
-scale = Vector2(1.58766, 6.64)
-shape = SubResource("RectangleShape2D_bjvdu")
-
-[node name="Sprite2D" type="Sprite2D" parent="paddle2"]
-texture = SubResource("GradientTexture2D_iymc7")
 
 [node name="ball" type="CharacterBody2D" parent="."]
 position = Vector2(604, 326)

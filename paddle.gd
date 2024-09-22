@@ -1,8 +1,8 @@
-extends CharacterBody2D
+extends StaticBody2D
 
 
 const SPEED = 300.0
-
+var velocity = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_up", "ui_down")
@@ -11,4 +11,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+	position += velocity * delta

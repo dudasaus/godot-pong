@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv8w14x1fe1jw"]
+
+[ext_resource type="Script" path="res://paddle.gd" id="1_mmd32"]
+
+[sub_resource type="Gradient" id="Gradient_wav4k"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iymc7"]
+gradient = SubResource("Gradient_wav4k")
+width = 32
+height = 128
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bipan"]
+
+[node name="paddle" type="StaticBody2D"]
+position = Vector2(42, 333)
+script = ExtResource("1_mmd32")
+metadata/is_paddle = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_iymc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.58766, 6.64)
+shape = SubResource("RectangleShape2D_bipan")
