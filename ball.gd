@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 			velocity = paddle_pos.direction_to(position) * speed
 		else:
 			velocity = velocity.bounce(collision_info.get_normal())
+		$beep.play()
 
 func reset():
 	position = get_viewport_rect().get_center()
