@@ -14,3 +14,7 @@ config/name="pong"
 run/main_scene="res://pong.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
