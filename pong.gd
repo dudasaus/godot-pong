@@ -21,11 +21,6 @@ func create_paddles():
 	p2.name = "paddle_2"
 	p2.position = Vector2(get_viewport_rect().size.x - paddle_margin, start_y)
 	add_child(p2)
-
-	#$score2.connect("score_signal", $Ui._on_pong_score_signal)
-	#$score.connect("score_signal", $Ui._on_pong_score_signal) 
-	#$score2.connect("score_signal", reset_ball)
-	#$score.connect("score_signal", reset_ball)
 	
 func create_goals():
 	var g1 = goal_scene.instantiate()
@@ -44,5 +39,5 @@ func create_goals():
 		goal.connect("score_signal", reset_ball) 
 	
 	
-func reset_ball(index: Variant) -> void:
+func reset_ball(_index: Variant) -> void:
 	$ball.reset()
