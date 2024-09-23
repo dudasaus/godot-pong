@@ -25,7 +25,3 @@ func _physics_process(delta: float) -> void:
 func reset():
 	position = get_viewport_rect().get_center()
 	velocity = initial_direction * initial_speed
-
-
-func _on_pong_score_signal(index: Variant) -> void:
-	reset()

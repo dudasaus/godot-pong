@@ -111,9 +111,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[connection signal="score_signal" from="." to="ball" method="_on_pong_score_signal"]
-[connection signal="score_signal" from="." to="Ui" method="_on_pong_score_signal"]
-[connection signal="area_entered" from="score" to="ball" method="_on_score_area_entered"]
-[connection signal="body_entered" from="score" to="ball" method="_on_score_body_entered"]
-[connection signal="body_entered" from="score2" to="ball" method="_on_score_body_entered"]
