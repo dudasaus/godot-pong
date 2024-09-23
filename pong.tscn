@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7fd5wscpnoaq"]
+[gd_scene load_steps=12 format=3 uid="uid://b7fd5wscpnoaq"]
 
 [ext_resource type="Script" path="res://pong.gd" id="1_iskim"]
 [ext_resource type="Material" uid="uid://b4cle15mxhug8" path="res://materials/red.tres" id="1_vamd1"]
 [ext_resource type="Script" path="res://ball.gd" id="2_2aocv"]
-[ext_resource type="PackedScene" uid="uid://c0j667cf5e6qw" path="res://score_boundary.tscn" id="3_bfviq"]
 [ext_resource type="AudioStream" uid="uid://bmk3qu6g3h3ud" path="res://beep.ogg" id="3_q8sxf"]
 [ext_resource type="FontFile" uid="uid://dsg71me61y1d2" path="res://jacquard.ttf" id="4_5ic3t"]
 [ext_resource type="Script" path="res://ui.gd" id="4_xf541"]
@@ -34,6 +33,7 @@ material = ExtResource("1_vamd1")
 script = ExtResource("1_iskim")
 
 [node name="LevelBorders" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(414, 423)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBorders"]
@@ -61,15 +61,6 @@ shape = SubResource("CircleShape2D_xk1ll")
 
 [node name="beep" type="AudioStreamPlayer" parent="ball"]
 stream = ExtResource("3_q8sxf")
-
-[node name="score" parent="." instance=ExtResource("3_bfviq")]
-metadata/player_index = 0
-
-[node name="score2" parent="." instance=ExtResource("3_bfviq")]
-position = Vector2(1154, 321)
-rotation = -1.5708
-player_index = 1
-metadata/player_index = 1
 
 [node name="Ui" type="Control" parent="."]
 layout_mode = 3
