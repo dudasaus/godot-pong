@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 var paddle_scene = preload("res://paddle.tscn")

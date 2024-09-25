@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var initial_speed = 300.0
-var initial_direction = Vector2.LEFT
 
 var speed_increase = 20.0
 
@@ -25,4 +24,5 @@ func _physics_process(delta: float) -> void:
 
 func reset():
 	position = get_viewport_rect().get_center()
+	var initial_direction = Vector2.LEFT if randf() < 0.5 else Vector2.RIGHT
 	velocity = initial_direction * initial_speed
