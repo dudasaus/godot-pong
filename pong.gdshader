@@ -1,12 +1,23 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+uniform float fps = 24.0;
+uniform bool glitching = true;
 
-uniform float time_to_red = 30.0;
+float random (vec2 uv) {
+    return fract(sin(dot(uv.xy,
+        vec2(12.9898,78.233))) * 43758.5453123);
+}
 
 void fragment() {
-	vec4 current_color = texture(screen_texture, UV);
-	float redness = min(1.0, TIME / time_to_red);
-	vec4 red_color = current_color * vec4(1.0, 0.0, 0.0, 1.0);
-	COLOR = mix(current_color, red_color, redness);
+	vec4 final_color = texture(screen_texture, UV);
+	if (glitching) {
+		float frame = floor(TIME * fps);
+		float offset_strength = random(vec2(frame)) * 2.0;
+		vec2 offset = SCREEN_PIXEL_SIZE * vec2(offset_strength);
+		float r_sample = texture(screen_texture, SCREEN_UV + offset).r;
+		float b_sample = texture(screen_texture, SCREEN_UV - offset).b;
+		final_color.rgb += vec3(r_sample, b_sample, b_sample);
+	}
+	COLOR = final_color;
 }

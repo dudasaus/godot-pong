@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 var paddle_scene = preload("res://paddle.tscn")
@@ -5,7 +6,6 @@ var goal_scene = preload("res://score_boundary.tscn")
 
 var paddle_margin = 32
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_paddles()
 	create_goals()
