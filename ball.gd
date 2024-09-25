@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 			speed += speed_increase
 			var paddle_pos = collider.position as Vector2
 			velocity = paddle_pos.direction_to(position) * speed
+			GlobalEffects.glitch.glitch_for(1)
 		else:
 			velocity = velocity.bounce(collision_info.get_normal())
 		$beep.play()
