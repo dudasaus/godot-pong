@@ -11,11 +11,5 @@ func _ready() -> void:
 	max_pos_y = get_viewport_rect().size.y - height / 2.0
 
 func _physics_process(delta: float) -> void:
-	var direction := Input.get_axis("ui_up", "ui_down")
-	if direction:
-		velocity.y = direction * SPEED
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
-
-	global_position += velocity * delta
-	global_position.y = clamp(global_position.y, min_pos_y, max_pos_y)
+	global_position += %MovementController.move_by(delta)
+	clamp(global_position.y, min_pos_y, max_pos_y)

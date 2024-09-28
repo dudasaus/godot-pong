@@ -52,6 +52,7 @@ rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_0ejht")
 
 [node name="ball" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(604, 326)
 script = ExtResource("2_2aocv")
 metadata/is_ball = true
@@ -67,7 +68,6 @@ shape = SubResource("CircleShape2D_xk1ll")
 stream = ExtResource("3_q8sxf")
 
 [node name="Ui" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -100,7 +100,6 @@ text = "0 - 0"
 horizontal_alignment = 1
 
 [node name="Effects" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("7_s1s7c")
 
 [node name="ColorRect" type="ColorRect" parent="Effects"]

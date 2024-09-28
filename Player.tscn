@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b01y4eheo8uu"]
+[gd_scene load_steps=4 format=3 uid="uid://b01y4eheo8uu"]
 
 [ext_resource type="PackedScene" uid="uid://cv8w14x1fe1jw" path="res://paddle.tscn" id="1_kmyg5"]
 [ext_resource type="PackedScene" uid="uid://c0j667cf5e6qw" path="res://score_boundary.tscn" id="2_10bec"]
+[ext_resource type="PackedScene" uid="uid://c5gjrsn1ke3r6" path="res://player_movement_controller.tscn" id="3_qgjt6"]
 
 [node name="Player" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(17, -1)
 
 [node name="score" parent="." instance=ExtResource("2_10bec")]
 position = Vector2(0, 2)
+
+[node name="MovementController" parent="." instance=ExtResource("3_qgjt6")]
+unique_name_in_owner = true

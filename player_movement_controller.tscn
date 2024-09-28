@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5gjrsn1ke3r6"]
+
+[ext_resource type="Script" path="res://player_movement_controller.gd" id="1_cav23"]
+
+[node name="PlayerMovementController" type="Node2D"]
+script = ExtResource("1_cav23")
