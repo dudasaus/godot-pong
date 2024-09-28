@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7fd5wscpnoaq"]
+[gd_scene load_steps=14 format=3 uid="uid://b7fd5wscpnoaq"]
 
 [ext_resource type="Script" path="res://pong.gd" id="1_iskim"]
 [ext_resource type="Material" uid="uid://b4cle15mxhug8" path="res://materials/glitch.tres" id="1_vamd1"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dsg71me61y1d2" path="res://jacquard.ttf" id="4_5ic3t"]
 [ext_resource type="Script" path="res://ui.gd" id="4_xf541"]
 [ext_resource type="Script" path="res://effects.gd" id="7_s1s7c"]
+[ext_resource type="PackedScene" uid="uid://b01y4eheo8uu" path="res://Player.tscn" id="8_icjdu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ejht"]
 
@@ -32,6 +33,9 @@ default_font_size = 80
 [node name="Pong" type="Node2D"]
 material = ExtResource("1_vamd1")
 script = ExtResource("1_iskim")
+
+[node name="Player" parent="." instance=ExtResource("8_icjdu")]
+position = Vector2(-1, 328)
 
 [node name="LevelBorders" type="StaticBody2D" parent="."]
 position = Vector2(414, 423)
@@ -63,6 +67,7 @@ shape = SubResource("CircleShape2D_xk1ll")
 stream = ExtResource("3_q8sxf")
 
 [node name="Ui" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,6 +100,7 @@ text = "0 - 0"
 horizontal_alignment = 1
 
 [node name="Effects" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("7_s1s7c")
 
 [node name="ColorRect" type="ColorRect" parent="Effects"]
@@ -102,8 +108,13 @@ material = ExtResource("1_vamd1")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="body_entered" from="score" to="score" method="_on_body_entered"]
-[connection signal="body_entered" from="@Area2D@17238" to="@Area2D@17238" method="_on_body_entered"]
+[node name="Player2" parent="." instance=ExtResource("8_icjdu")]
+position = Vector2(1155, 307)
+rotation = 3.1405

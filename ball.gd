@@ -15,8 +15,8 @@ func _physics_process(delta: float) -> void:
 		if collider.has_meta("is_paddle"):
 			print(collider.name)
 			speed += speed_increase
-			var paddle_pos = collider.position as Vector2
-			velocity = paddle_pos.direction_to(position) * speed
+			var paddle_pos = collider.global_position as Vector2
+			velocity = paddle_pos.direction_to(global_position) * speed
 			GlobalEffects.glitch.glitch_for(1)
 		else:
 			velocity = velocity.bounce(collision_info.get_normal())

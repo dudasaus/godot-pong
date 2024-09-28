@@ -17,5 +17,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.x, 0, SPEED)
 
-	position += velocity * delta
-	position.y = clamp(position.y, min_pos_y, max_pos_y)
+	global_position += velocity * delta
+	global_position.y = clamp(global_position.y, min_pos_y, max_pos_y)

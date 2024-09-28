@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01y4eheo8uu"]
+
+[ext_resource type="PackedScene" uid="uid://cv8w14x1fe1jw" path="res://paddle.tscn" id="1_kmyg5"]
+[ext_resource type="PackedScene" uid="uid://c0j667cf5e6qw" path="res://score_boundary.tscn" id="2_10bec"]
+
+[node name="Player" type="Node2D"]
+
+[node name="paddle" parent="." instance=ExtResource("1_kmyg5")]
+position = Vector2(17, -1)
+
+[node name="score" parent="." instance=ExtResource("2_10bec")]
+position = Vector2(0, 2)
