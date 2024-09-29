@@ -6,9 +6,9 @@ func _ready() -> void:
 	create_goals()
 	
 func create_goals():
-	$Player2.get_node("score").player_index = 0
-	$Player2.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)
-	$Player2.get_node("score").connect("score_signal", reset_ball)
+	$AIPlayer.get_node("score").player_index = 0
+	$AIPlayer.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)
+	$AIPlayer.get_node("score").connect("score_signal", reset_ball)
 
 	$Player.get_node("score").player_index = 1
 	$Player.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)

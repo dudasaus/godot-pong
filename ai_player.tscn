@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd2tedemkk4pt"]
+
+[ext_resource type="PackedScene" uid="uid://cv8w14x1fe1jw" path="res://paddle.tscn" id="1_34p2n"]
+[ext_resource type="PackedScene" uid="uid://c0j667cf5e6qw" path="res://score_boundary.tscn" id="2_uded2"]
+[ext_resource type="PackedScene" uid="uid://c851wc2rtyxom" path="res://ai_movement_controller.tscn" id="3_wl1rt"]
+
+[node name="AIPlayer" type="Node2D"]
+
+[node name="paddle" parent="." instance=ExtResource("1_34p2n")]
+unique_name_in_owner = true
+position = Vector2(17, 0)
+
+[node name="score" parent="." instance=ExtResource("2_uded2")]
+position = Vector2(0, -1)
+
+[node name="MovementController" parent="." instance=ExtResource("3_wl1rt")]
+unique_name_in_owner = true

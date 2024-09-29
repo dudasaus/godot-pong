@@ -12,4 +12,4 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	global_position += %MovementController.move_by(delta)
-	clamp(global_position.y, min_pos_y, max_pos_y)
+	global_position.y = clamp(global_position.y, min_pos_y, max_pos_y)

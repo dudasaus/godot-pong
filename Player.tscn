@@ -7,6 +7,7 @@
 [node name="Player" type="Node2D"]
 
 [node name="paddle" parent="." instance=ExtResource("1_kmyg5")]
+unique_name_in_owner = true
 position = Vector2(17, -1)
 
 [node name="score" parent="." instance=ExtResource("2_10bec")]
