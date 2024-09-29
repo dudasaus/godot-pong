@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPEED = 300.0
+const SPEED = 350.0
 var velocity = Vector2.ZERO
 var height = 120.0
 var min_pos_y = 0.0 + height / 2.0

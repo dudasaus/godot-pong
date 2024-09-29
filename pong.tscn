@@ -58,7 +58,6 @@ rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_0ejht")
 
 [node name="ball" type="CharacterBody2D" parent="." groups=["ball"]]
-unique_name_in_owner = true
 position = Vector2(604, 326)
 collision_layer = 3
 script = ExtResource("2_2aocv")
@@ -120,3 +119,7 @@ offset_right = 3.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextLocation" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(794, 180)

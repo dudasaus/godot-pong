@@ -1,6 +1,6 @@
 extends Node2D
 
-const SPEED = 100.0
+var speed = 100.0
 var velocity = Vector2.ZERO
 var height = 120.0
 var min_pos_y = 0.0 + height / 2.0
@@ -16,8 +16,8 @@ func move_by(delta: float) -> Vector2:
 	var direction = Vector2.DOWN if diff > 0.0 else Vector2.UP
 	
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * speed
 	else:
-		velocity = move_toward(velocity.x, 0, SPEED)
+		velocity = move_toward(velocity.x, 0, speed)
 
 	return velocity * delta

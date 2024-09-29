@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var initial_speed = 300.0
+var initial_speed = 500.0
 
 var speed_increase = 20.0
 
