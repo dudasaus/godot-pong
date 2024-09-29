@@ -7,6 +7,8 @@
 [node name="score" type="Area2D"]
 position = Vector2(0, 321)
 rotation = 1.5708
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_8djdu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -44,6 +44,7 @@ position = Vector2(-1, 328)
 
 [node name="LevelBorders" type="StaticBody2D" parent="."]
 position = Vector2(414, 423)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBorders"]
 light_mask = 0
@@ -59,6 +60,7 @@ shape = SubResource("WorldBoundaryShape2D_0ejht")
 [node name="ball" type="CharacterBody2D" parent="." groups=["ball"]]
 unique_name_in_owner = true
 position = Vector2(604, 326)
+collision_layer = 3
 script = ExtResource("2_2aocv")
 metadata/is_ball = true
 
