@@ -19,7 +19,5 @@ func move_by(delta: float) -> Vector2:
 		velocity = direction * SPEED
 	else:
 		velocity = move_toward(velocity.x, 0, SPEED)
-		
-	var would_move_discance = (velocity * delta).length()
 
 	return velocity * delta
