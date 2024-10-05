@@ -45,15 +45,11 @@ func scored_on(index: Variant) -> void:
 				4.0,
 				'$clear'
 			]
-			%ConversationService.queue_messages(msgs)
-			var ai_text = preload("res://ai_text.tscn")
-			var text = ai_text.instantiate()
-			text.position = %TextLocation.position
-			add_child(text)
-			$AIPlayer.get_node("MovementController").speed = 350.0
-			get_tree().create_timer(6.3).timeout.connect(reset_ball)
+			var continue_signal = %ConversationService.queue_messages(msgs)
 			$ball.reset()
 			$ball.velocity = Vector2(0, 0);
+			$AIPlayer.get_node("%MovementController").speed = 350.0
+			continue_signal.connect(reset_ball)
 		
 	if should_reset:
 		reset_ball()
