@@ -106,6 +106,7 @@ text = "0 - 0"
 horizontal_alignment = 1
 
 [node name="Effects" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("7_s1s7c")
 
 [node name="ColorRect" type="ColorRect" parent="Effects"]

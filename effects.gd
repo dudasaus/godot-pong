@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready() -> void:
+	self.visible = true
 	GlobalEffects.glitch = self
 
 func glitch(on: bool):

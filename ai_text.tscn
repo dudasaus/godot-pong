@@ -20,6 +20,7 @@ offset_bottom = 145.0
 color = Color(0.244776, 0.244776, 0.244776, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 270.0
 offset_bottom = 23.0
 color = Color(0.103743, 0.103744, 0.103743, 1)
@@ -39,6 +40,7 @@ autostart = true
 
 [node name="Label2" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 4.0
 offset_top = 47.0
 offset_right = 239.0
@@ -53,6 +55,7 @@ autostart = true
 
 [node name="Label3" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 3.0
 offset_top = 77.0
 offset_right = 238.0

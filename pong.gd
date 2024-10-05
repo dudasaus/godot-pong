@@ -7,13 +7,15 @@ func _ready() -> void:
 	create_goals()
 	
 func create_goals():
-	$AIPlayer.get_node("score").player_index = 0
-	$AIPlayer.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)
-	$AIPlayer.get_node("score").connect("score_signal", scored_on)
+	var ai_score = $AIPlayer.get_node("score")
+	ai_score.player_index = 0
+	ai_score.connect("score_signal", $Ui._on_pong_score_signal)
+	ai_score.connect("score_signal", scored_on)
 
-	$Player.get_node("score").player_index = 1
-	$Player.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)
-	$Player.get_node("score").connect("score_signal", scored_on)
+	var player_score = $Player.get_node("score")
+	player_score.player_index = 1
+	player_score.connect("score_signal", $Ui._on_pong_score_signal)
+	player_score.connect("score_signal", scored_on)
 	
 func scored_on(index: Variant) -> void:
 	var ai_scored_on = index == 0
