@@ -17,7 +17,9 @@ void fragment() {
 		vec2 offset = SCREEN_PIXEL_SIZE * vec2(offset_strength);
 		float r_sample = texture(screen_texture, SCREEN_UV + offset).r;
 		float b_sample = texture(screen_texture, SCREEN_UV - offset).b;
-		final_color.rgb += vec3(r_sample, b_sample, b_sample);
+		final_color.r = max(r_sample, final_color.r);
+		final_color.b = max(b_sample, final_color.b);
+		final_color.g = max(b_sample, final_color.g);
 	}
 	COLOR = final_color;
 }
