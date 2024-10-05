@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 				message += '\n' + next
 	
 func queue_messages(msgs: Array) -> Signal:
+	# Huge brain API
 	# msgs: an array of...
 	#  string: messages, put together with newlines.
 	#  '$clear': special string to clear messages.
