@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dsg71me61y1d2"
-path="res://.godot/imported/jacquard.ttf-c0b40711b28a9900ad7beaea3614eb31.fontdata"
+uid="uid://cqlycghltk4sn"
+path="res://.godot/imported/BebasNeue-Regular.ttf-96b0a38fe567e8a9a90049dd78e6a8a3.fontdata"
 
 [deps]
 
-source_file="res://jacquard.ttf"
-dest_files=["res://.godot/imported/jacquard.ttf-c0b40711b28a9900ad7beaea3614eb31.fontdata"]
+source_file="res://assets/BebasNeue-Regular.ttf"
+dest_files=["res://.godot/imported/BebasNeue-Regular.ttf-96b0a38fe567e8a9a90049dd78e6a8a3.fontdata"]
 
 [params]
 

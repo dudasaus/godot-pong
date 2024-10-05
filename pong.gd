@@ -29,25 +29,33 @@ func create_goals():
 	
 func scored_on(index: Variant) -> void:
 	var ai_scored_on = index == 0
+	var should_reset = true
 	if(ai_scored_on):
 		stage += 1
-
-	if(stage == 2 && ai_scored_on):
-		var ai_text = preload("res://ai_text.tscn")
-		var text = ai_text.instantiate()
-		text.position = %TextLocation.position
-		add_child(text)
-		$AIPlayer.get_node("MovementController").speed = 350.0
-		var timer = Timer.new()
-		timer.wait_time = 6.3
-		timer.timeout.connect(reset_ball)
-		timer.one_shot = true
-		add_child(timer)
-		timer.start()
-		$ball.reset()
-		$ball.velocity = Vector2(0, 0);
+		if (stage == 1):
+			%ConversationService.queue_messages(['Nice shot.', 2.5, '$clear'])
+		elif stage == 2:
+			should_reset = false
+			var msgs = [
+				"This doesn't seem very fair.",
+				1.5,
+				"Let me fix that.",
+				1.5,
+				"/set_speed(ai, player_speed)",
+				4.0,
+				'$clear'
+			]
+			%ConversationService.queue_messages(msgs)
+			var ai_text = preload("res://ai_text.tscn")
+			var text = ai_text.instantiate()
+			text.position = %TextLocation.position
+			add_child(text)
+			$AIPlayer.get_node("MovementController").speed = 350.0
+			get_tree().create_timer(6.3).timeout.connect(reset_ball)
+			$ball.reset()
+			$ball.velocity = Vector2(0, 0);
 		
-	else:
+	if should_reset:
 		reset_ball()
 
 func reset_ball() -> void:

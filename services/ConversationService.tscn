@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvvybtaf5xjkp"]
+
+[ext_resource type="Theme" uid="uid://fspr1hj6y3kh" path="res://themes/base_theme.tres" id="1_dvrqc"]
+[ext_resource type="Script" path="res://services/conversation_service.gd" id="1_jni5n"]
+
+[node name="ConversationService" type="Node2D"]
+script = ExtResource("1_jni5n")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 170.0
+border_width = 2.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 170.0
+theme = ExtResource("1_dvrqc")
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_dvrqc")
+text = "first line
+second line
+third line
+fourth line
+"
+horizontal_alignment = 1
+vertical_alignment = 1

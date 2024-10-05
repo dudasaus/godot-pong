@@ -5,10 +5,11 @@
 [ext_resource type="Script" path="res://ball.gd" id="2_2aocv"]
 [ext_resource type="PackedScene" uid="uid://dd2tedemkk4pt" path="res://ai_player.tscn" id="3_kwsj0"]
 [ext_resource type="AudioStream" uid="uid://bmk3qu6g3h3ud" path="res://beep.ogg" id="3_q8sxf"]
-[ext_resource type="FontFile" uid="uid://dsg71me61y1d2" path="res://jacquard.ttf" id="4_5ic3t"]
 [ext_resource type="Script" path="res://ui.gd" id="4_xf541"]
+[ext_resource type="Theme" uid="uid://fspr1hj6y3kh" path="res://themes/base_theme.tres" id="7_pl6v1"]
 [ext_resource type="Script" path="res://effects.gd" id="7_s1s7c"]
 [ext_resource type="PackedScene" uid="uid://b01y4eheo8uu" path="res://Player.tscn" id="8_icjdu"]
+[ext_resource type="PackedScene" uid="uid://dvvybtaf5xjkp" path="res://services/ConversationService.tscn" id="10_3jo6o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ejht"]
 
@@ -25,11 +26,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xk1ll"]
-
-[sub_resource type="Theme" id="Theme_0wg6a"]
-default_font = ExtResource("4_5ic3t")
-default_font_size = 80
-/fonts/jacquard = ExtResource("4_5ic3t")
 
 [node name="Pong" type="Node2D"]
 material = ExtResource("1_vamd1")
@@ -80,7 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_0wg6a")
+theme = ExtResource("7_pl6v1")
 script = ExtResource("4_xf541")
 
 [node name="ScoreLabel" type="Label" parent="Ui"]
@@ -96,6 +92,8 @@ offset_right = 576.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("7_pl6v1")
+theme_override_font_sizes/font_size = 64
 text = "0 - 0"
 horizontal_alignment = 1
 
@@ -118,3 +116,7 @@ grow_vertical = 2
 [node name="TextLocation" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(794, 180)
+
+[node name="ConversationService" parent="." instance=ExtResource("10_3jo6o")]
+unique_name_in_owner = true
+position = Vector2(0, 478)
