@@ -1,11 +1,21 @@
 extends Node2D
 
-var paddle_margin = 32
+var paddle_margin = 8
 var stage = 0
 
 func _ready() -> void:
+	position_players()
 	create_goals()
+
+func position_players():
+	var start_y = get_viewport_rect().get_center().y
 	
+	var p1 = $Player
+	p1.position = Vector2(paddle_margin, start_y)
+
+	var p2 = $AIPlayer
+	p2.position = Vector2(get_viewport_rect().size.x - paddle_margin, start_y)
+
 func create_goals():
 	var ai_score = $AIPlayer.get_node("score")
 	ai_score.player_index = 0
