@@ -4,8 +4,9 @@ extends Control
 var player_scores = []
 
 func _ready() -> void:
-	position.x = get_viewport_rect().get_center().x
-	position.y = 16
+	$ScoreLabel.position.x = get_viewport_rect().get_center().x - ($ScoreLabel.size.x / 2)
+	$ScoreLabel.position.y = 16
+	print($ScoreLabel.global_position)
 	for i in range(num_players):
 		player_scores.append(0)
 	update_score_label()

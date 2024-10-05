@@ -1,19 +1,31 @@
 extends Node2D
 
-var paddle_margin = 32
+var paddle_margin = 8
 var stage = 0
 
 func _ready() -> void:
+	position_players()
 	create_goals()
-	
-func create_goals():
-	$AIPlayer.get_node("score").player_index = 0
-	$AIPlayer.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)
-	$AIPlayer.get_node("score").connect("score_signal", scored_on)
 
-	$Player.get_node("score").player_index = 1
-	$Player.get_node("score").connect("score_signal", $Ui._on_pong_score_signal)
-	$Player.get_node("score").connect("score_signal", scored_on)
+func position_players():
+	var start_y = get_viewport_rect().get_center().y
+	
+	var p1 = $Player
+	p1.position = Vector2(paddle_margin, start_y)
+
+	var p2 = $AIPlayer
+	p2.position = Vector2(get_viewport_rect().size.x - paddle_margin, start_y)
+
+func create_goals():
+	var ai_score = $AIPlayer.get_node("score")
+	ai_score.player_index = 0
+	ai_score.connect("score_signal", $Ui._on_pong_score_signal)
+	ai_score.connect("score_signal", scored_on)
+
+	var player_score = $Player.get_node("score")
+	player_score.player_index = 1
+	player_score.connect("score_signal", $Ui._on_pong_score_signal)
+	player_score.connect("score_signal", scored_on)
 	
 func scored_on(index: Variant) -> void:
 	var ai_scored_on = index == 0
